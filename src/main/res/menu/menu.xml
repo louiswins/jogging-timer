@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/c25k_website"
+        android:title="@string/visit_c25k_website"
+        android:alphabeticShortcut="w" />
+</menu>

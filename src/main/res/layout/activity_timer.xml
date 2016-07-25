@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.louiswins.joggingtimer.TimerActivity">
+
+    <LinearLayout
+        android:id="@+id/title_bar"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_top_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin">
+
+        <Button
+            android:id="@+id/back"
+            android:text="@string/back_label"
+            android:textSize="24sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:minWidth="0dp"
+            android:onClick="prevWorkout"
+            style="@style/Widget.AppCompat.Button.Borderless" />
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="@dimen/title_padding"
+            android:paddingBottom="@dimen/title_padding"
+            android:gravity="center"
+            android:textSize="40sp" />
+        <Button
+            android:id="@+id/forth"
+            android:text="@string/forth_label"
+            android:textSize="24sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:minWidth="0dp"
+            android:onClick="nextWorkout"
+            style="@style/Widget.AppCompat.Button.Borderless" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title_bar"
+        android:textSize="16sp"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        />
+
+    <ProgressBar
+        android:id="@+id/timer_bar"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:progress="25"
+        android:progressDrawable="@drawable/progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:minHeight="@dimen/progressbar_height"
+        android:layout_centerVertical="true" />
+    <TextView
+        android:id="@+id/current_action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/timer_bar"
+        android:layout_alignRight="@id/timer_bar"
+        android:layout_alignTop="@id/timer_bar"
+        android:layout_alignBottom="@id/timer_bar"
+        android:gravity="center"
+        android:textSize="24sp" />
+    <TextView
+        android:id="@+id/counting_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/timer_bar"
+        android:layout_alignLeft="@id/timer_bar"
+        android:textSize="24sp" />
+    <TextView
+        android:id="@+id/counting_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/timer_bar"
+        android:layout_alignRight="@id/timer_bar"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/startPause"
+        android:text="@string/start"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/counting_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="startPause"
+        android:textSize="24sp"
+        android:paddingTop="@dimen/startpause_vertical_padding"
+        android:paddingBottom="@dimen/startpause_vertical_padding"
+        android:paddingLeft="@dimen/startpause_horizontal_padding"
+        android:paddingRight="@dimen/startpause_horizontal_padding" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="@dimen/activity_bottom_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:background="@color/colorPrimary">
+        <ProgressBar
+            android:id="@+id/total_bar"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:progress="25"
+            android:progressDrawable="@drawable/total_bar"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="2dp"/>
+        <TextView
+            android:id="@+id/counting_up_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/total_bar"
+            android:layout_alignLeft="@id/total_bar"
+            android:textColor="@color/total_progress_labels"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/counting_down_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/total_bar"
+            android:layout_alignRight="@id/total_bar"
+            android:textColor="@color/total_progress_labels"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@id/total_bar"
+            android:textColor="@color/total_progress_labels"
+            android:textStyle="bold"
+            android:text="@string/workout_total" />
+    </RelativeLayout>
+
+</RelativeLayout>
